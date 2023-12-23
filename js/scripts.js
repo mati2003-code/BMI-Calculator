@@ -90,7 +90,6 @@ const countBmi = () => {
   bmiMessage.innerText = `Twój wskaźnik masy ciała wynosi: ${result}`;
 
    clearFields();
-   document.body.style.zoom = '100%';
 }
 
 const enterPressed = (input) => {
