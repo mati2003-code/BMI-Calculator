@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/b9277949ac.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js" defer></script>
+    <title>Kalkulator BMI</title>
+</head>
+<body>
+    <div class="form">
+        <h1>Oblicz swój wskaźnik BMI<i class="fa-solid fa-notes-medical"></i></h1>
+        <div class="container">
+            <input class="container__input container__input--weight" type="number" placeholder="Wpisz swoją wagę" id="weight"><label for="weight">KG</label>
+        </div>
+        <div class="container">
+            <input class="container__input container__input--height" type="number" placeholder="Wpisz swój wzrost" id="height"><label for="height">CM</label>
+        </div>
+        <input type="submit" class="form__button" value="Oblicz">
+        <p class="form__info"></p>
+        <p class="form__user-message"></p>
+    </div>
+</body>
+</html>
