@@ -20,10 +20,10 @@ const countBmi = () => {
   const heightValueParsed = parseFloat(inputHeight.value) / metresToCm;
 
   // Checking if the fields have a correct value
-  if( isNaN(inputHeightValue) 
-   || isNaN(inputWeightValue)
-   || inputHeightValue === 0 
-   || inputWeightValue === 0
+  if( isNaN(weightValueParsed) 
+   || isNaN(heightValueParsed)
+   || heightValueParsed === 0
+   || weightValueParsed === 0
    || inputHeightValue.length > 3
    || inputWeightValue.length > 3) {
     clearFields();
@@ -63,7 +63,6 @@ const countBmi = () => {
   // Thumbs icons
   const thumbUp = '<i class="fa-solid fa-thumbs-up"></i>';
   const thumbDown = '<i class="fa-solid fa-thumbs-down"></i>';
-  const animationAppear = 'animation-appear';
 
   const changeTextColor = (color) => {
     weightStatus.classList.add(`text-color-${color}`);
@@ -89,8 +88,7 @@ const countBmi = () => {
       break;
   default: 
   }
-  bmiMessage.classList.add(`${animationAppear}`);
-  weightStatus.classList.add(`${animationAppear}`);
+
   bmiMessage.innerText = `Twój wskaźnik masy ciała wynosi: ${result}`;
 
    clearFields();
@@ -106,7 +104,10 @@ const enterPressed = (input) => {
 
 
 // Events
-submitButton.addEventListener('click', countBmi);
+submitButton.addEventListener('click', (e)=>{
+  e.preventDefault();
+  countBmi();
+});
 enterPressed(inputHeight);
 enterPressed(inputWeight);
 
