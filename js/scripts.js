@@ -13,22 +13,26 @@ const clearFields = () => {
 }
 
 const countBmi = () => {
-  const weightValue = parseFloat(inputWeight.value);
+  const inputWeightValue = inputWeight.value;
+  const inputHeightValue = inputHeight.value;
+  const weightValueParsed = parseFloat(inputWeight.value);
   const metresToCm = 100;
-  const heightValue = parseFloat(inputHeight.value) / metresToCm;
+  const heightValueParsed = parseFloat(inputHeight.value) / metresToCm;
 
   // Checking if the fields have a correct value
-  if( isNaN(heightValue) 
-   || isNaN(weightValue)
-   || heightValue === 0 
-   || weightValue === 0) {
+  if( isNaN(inputHeightValue) 
+   || isNaN(inputWeightValue)
+   || inputHeightValue === 0 
+   || inputWeightValue === 0
+   || inputHeightValue.length > 3
+   || inputWeightValue.length > 3) {
     clearFields();
     bmiMessage.innerText = 'Wprowadź prawidłowe dane (liczby)';
     weightStatus.innerText = '';
     return;
   }
 
-  let bmiValue = weightValue / Math.pow(heightValue, 2);
+  const bmiValue = weightValueParsed / Math.pow(heightValueParsed, 2);
   let result = bmiValue.toFixed(2);
   let userMessage;
 
