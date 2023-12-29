@@ -97,7 +97,7 @@ const countBmi = () => {
 const enterPressed = (input) => {
   input.addEventListener('keydown', (e) => {
     if(e.key === 'Enter') {
-      countBmi();
+        countBmi();
     }
   });
 }

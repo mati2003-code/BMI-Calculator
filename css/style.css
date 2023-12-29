@@ -4,9 +4,21 @@
   }
 }
 
+@keyframes loading {
+
+  to {
+    width: 100%;
+  }
+}
+
 *, *::after, *::before {
   margin: 0;
   padding: 0;
+}
+
+::selection {
+  background-color: green;
+  color: #fff;
 }
 
 html {
@@ -135,3 +147,4 @@ label {
 .animation-appear {
   animation: appear 0.3s ease-in forwards;
 }
+
