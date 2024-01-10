@@ -33,7 +33,7 @@ const countBmi = () => {
   }
 
   const bmiValue = weightValueParsed / Math.pow(heightValueParsed, 2);
-  let result = bmiValue.toFixed(2);
+  const result = bmiValue.toFixed(2);
   let userMessage;
 
 // Weight status
@@ -91,7 +91,7 @@ const countBmi = () => {
 
   bmiMessage.innerText = `Twój wskaźnik masy ciała wynosi: ${result}`;
 
-   clearFields();
+  clearFields();
 }
 
 const enterPressed = (input) => {
